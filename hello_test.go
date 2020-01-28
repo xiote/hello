@@ -16,3 +16,20 @@ func TestHello(t *testing.T) {
 	}
 
 }
+
+func TestValidate(t *testing.T) {
+	cases := []struct {
+		inName    string
+		wantValid bool
+	}{
+		{"Brian", true},
+		{"", false},
+	}
+	for _, c := range cases {
+		gotValid := Validate(c.inName)
+		if gotValid != c.wantValid {
+			t.Errorf("Validate(%q) == %t, want %t", c.inName, gotValid, c.wantValid)
+		}
+	}
+
+}

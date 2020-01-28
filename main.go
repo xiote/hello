@@ -11,6 +11,15 @@ func main() {
 	fmt.Printf("What is your name? ")
 	for scanner.Scan() {
 		var name string = scanner.Text()
+
+		var valid bool = Validate(name)
+		if valid == false {
+			fmt.Println("Type valid name")
+			fmt.Println()
+			fmt.Printf("What is your name? ")
+			continue
+		}
+
 		var message = Hello(name)
 		fmt.Println(message)
 		fmt.Println()
