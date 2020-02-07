@@ -4,4 +4,7 @@ src/
         hello.go            
         hello_test.go
         main.go
+        utils/
+            str.go
+            str_test.go
 ```
