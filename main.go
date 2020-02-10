@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+
+	"github.com/xiote/stringutil"
 )
 
 func main() {
@@ -12,8 +14,8 @@ func main() {
 	for scanner.Scan() {
 		var name string = scanner.Text()
 
-		var valid bool = Validate(name)
-		if valid == false {
+		var isempty bool = strutil.IsEmptyS(name)
+		if isempty == true {
 			fmt.Println("Type valid name")
 			fmt.Println()
 			fmt.Printf("What is your name? ")
